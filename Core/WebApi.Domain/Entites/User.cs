@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebApi.Domain.Common;
-using WebApi.Domain.ValueObjects;
+
 
 namespace WebApi.Domain.Entites
 {
