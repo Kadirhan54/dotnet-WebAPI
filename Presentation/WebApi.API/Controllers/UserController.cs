@@ -46,7 +46,7 @@ namespace WebApi.API.Controllers
                 {
                     FirstName = createUserRequest.FirstName,
                     LastName = createUserRequest.LastName,
-                    CreatedAt = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     Email = createUserRequest.Email,
                     CreatedByUserId = createUserRequest.CreatedByUserId,
                     PhoneNumber = createUserRequest.PhoneNumber,
@@ -81,7 +81,7 @@ namespace WebApi.API.Controllers
                 user.LastName = modifyUserRequest.LastName;
                 user.Email = modifyUserRequest.Email;
                 user.PhoneNumber = modifyUserRequest.PhoneNumber;
-                user.ModifiedAt = DateTime.UtcNow;
+                user.LastModifiedOn = DateTime.UtcNow;
                 user.ModifiedByUserId = "self";
 
                 _context.SaveChanges();
@@ -107,8 +107,8 @@ namespace WebApi.API.Controllers
                 if (user == null)
                     return BadRequest();
 
-                user.DeletedAt = DateTime.UtcNow;
-                user.DeletedByEntity = "self";
+                user.DeletedOn = DateTime.UtcNow;
+                user.DeletedByUserId = "self";
                 user.IsDeleted = true;
 
                 // TODO : When user removed, the fields are removed too as expected. So just modify the entity as removed.
