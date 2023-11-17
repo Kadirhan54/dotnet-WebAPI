@@ -28,7 +28,7 @@ namespace WebApi.API.Services
                 .RuleFor(s => s.Age, f => Convert.ToInt16(_random.Next(10, 59)))
                 .RuleFor(s => s.RegistrationFee, f => _random.Next(0, 9999))
                 .RuleFor(s => s.CreatedOn, f => DateTimeOffset.UtcNow)
-                .RuleFor(s => s.CreatedByUserId, f => "KalayMaster");
+                .RuleFor(s => s.CreatedByUserId, f => "Kado");
 
 
             var students = fakeStudentRules.Generate(10000);
