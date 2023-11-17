@@ -11,7 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Bogus library for create fake data
 builder.Services.AddScoped<FakeDataService>();
+
+// Caching
+builder.Services.AddMemoryCache();
 
 var connectionString = builder.Configuration.GetSection("YetgenPostgreSQLDB").Value;
 
