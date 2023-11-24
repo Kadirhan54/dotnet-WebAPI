@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using WebApi.Domain.Common;
 using WebApi.Domain.Enums;
 
 namespace WebApi.Domain.Entites

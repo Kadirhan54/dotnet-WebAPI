@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApi.Domain.Common;
 
-namespace WebApi.Domain.Common
+namespace WebApi.Domain.Entites
 {
-    public class EntityBase<TKey> : ICreatedByEntity, IModifiedByEntity , IDeletedByEntity
+    public class EntityBase<TKey> : ICreatedByEntity, IModifiedByEntity, IDeletedByEntity
     {
         public virtual TKey Id { get; set; }
 
