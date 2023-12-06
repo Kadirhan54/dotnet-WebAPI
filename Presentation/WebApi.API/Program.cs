@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi.API.Services;
+using WebApi.Application;
+using WebApi.Infrastructure.Services;
 using WebApi.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,9 @@ builder.Services.AddScoped<FakeDataService>();
 
 // Caching
 builder.Services.AddMemoryCache();
+
+// Week 10 ConfigurationService homework
+builder.Services.AddSingleton<IConfigurationService, ConfigurationService>();
 
 var connectionString = builder.Configuration.GetSection("YetgenPostgreSQLDB").Value;
 
