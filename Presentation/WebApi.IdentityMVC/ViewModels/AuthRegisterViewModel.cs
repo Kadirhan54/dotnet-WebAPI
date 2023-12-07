@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WebApi.Domain.Enums;
 
 namespace WebApi.IdentityMVC.ViewModels
 {
@@ -17,7 +18,7 @@ namespace WebApi.IdentityMVC.ViewModels
         [Required]
         public string SurName { get; set; }
         public DateTimeOffset? BirthDate { get; set; }
-        //[Required]
-        //public Gender Gender { get; set; }
+        [Required]
+        public Gender Gender { get; set; }
     }
 }

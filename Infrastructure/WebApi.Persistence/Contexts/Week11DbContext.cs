@@ -8,13 +8,13 @@ using WebApi.Domain.Entites;
 
 namespace WebApi.Persistence.Contexts
 {
-    public class WebApiDbContext : DbContext
+    public class Week11DbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<BankAccount> People { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("your-connection-string");
+            optionsBuilder.UseNpgsql("your-string");
         }
     }
 }

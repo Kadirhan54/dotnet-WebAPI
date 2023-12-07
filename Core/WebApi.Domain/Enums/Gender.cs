@@ -10,5 +10,6 @@ namespace WebApi.Domain.Enums
     {
         Female = 0,
         Male = 1,
+        AttackHelicopter = 2,
     }
 }

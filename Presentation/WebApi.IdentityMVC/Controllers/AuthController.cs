@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
+using WebApi.Domain.Entites;
 using WebApi.Domain.Identity;
 using WebApi.IdentityMVC.ViewModels;
 
@@ -47,7 +48,7 @@ namespace WebApi.IdentityMVC.Controllers
                 Email = registerViewModel.Email,
                 FirstName = registerViewModel.FirstName,
                 SurName = registerViewModel.SurName,
-                //Gender = registerViewModel.Gender,
+                Gender = registerViewModel.Gender,
                 BirthDate = registerViewModel.BirthDate.Value.ToUniversalTime(),
                 UserName = registerViewModel.UserName,
                 CreatedOn = DateTimeOffset.UtcNow,
@@ -74,8 +75,10 @@ namespace WebApi.IdentityMVC.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            
             if (User.Identity.IsAuthenticated)
             {
+                _toastNotification.AddSuccessToastMessage($"You already logged in {User.Identity.Name}!");
                 return RedirectToAction("Index", "Home");
             }
 
@@ -111,7 +114,7 @@ namespace WebApi.IdentityMVC.Controllers
 
             _toastNotification.AddSuccessToastMessage($"Welcome {user.UserName}!");
 
-            return RedirectToAction("Index", controllerName: "Students");
+            return RedirectToAction("Index", controllerName: "Home");
         }
     }
 }

@@ -30,7 +30,7 @@ namespace WebApi.Infrastructure.Services
 
             configurationManager.SetBasePath(path);
 
-            configurationManager.AddJsonFile("appsetttings.json");
+            configurationManager.AddJsonFile("appsettings.json");
 
             return configurationManager.GetSection(key).Value;
 
